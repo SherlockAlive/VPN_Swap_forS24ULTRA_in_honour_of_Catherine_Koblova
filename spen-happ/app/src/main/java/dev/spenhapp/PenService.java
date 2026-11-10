@@ -30,6 +30,7 @@ public final class PenService extends Service {
         @Override public void onReceive(Context context, Intent intent) {
             if (!"com.samsung.pen.INSERT".equals(intent.getAction()) || !intent.hasExtra("penInsert")) return;
             boolean inserted = intent.getBooleanExtra("penInsert", true);
+            log("RAW S Pen broadcast: penInsert=" + inserted);
             handlePen(inserted);
         }
     };

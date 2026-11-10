@@ -102,7 +102,7 @@ public final class MainActivity extends Activity {
         String old = prefs.getString("log", "");
         String line = new java.text.SimpleDateFormat("HH:mm:ss", java.util.Locale.getDefault())
                 .format(new java.util.Date()) + "  [ТЕСТ] " + message;
-        String merged = line + "\\n" + old;
+        String merged = line + "\n" + old;
         prefs.edit().putString("log", merged.length() > 4500 ? merged.substring(0, 4500) : merged).apply();
         refresh();
     }
